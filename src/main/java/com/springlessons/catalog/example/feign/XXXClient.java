@@ -15,7 +15,7 @@ import java.util.List;
 // port заменить на адрес сервера, к которому происходит обращение
 // endpoint заменить на endpoint сервера, к которому происходит обращение
 // (аналогично значению в requestmapping контроллера, к которому происходит обращение)
-@FeignClient(value = "XXX", url = "http://ip:port/endpoint")
+@FeignClient(value = "YYY", url = "http://ip:port/endpoint")
 public interface XXXClient {
 
     @GetMapping("/{id}") // для отправки GET запроса на указанный endpoint
