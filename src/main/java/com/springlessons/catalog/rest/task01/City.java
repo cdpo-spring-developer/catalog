@@ -20,10 +20,8 @@ public class City {
     @NonNull
     private String code;
 
-    @NonNull
     private double lat;
 
-    @NonNull
     private double lon;
 }
 /*
