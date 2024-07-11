@@ -16,4 +16,11 @@ public class AppConfiguration {
                 .setConnectTimeout(Duration.ofMillis(5000))
                 .build();
     }
+
+    @Bean("cityServiceRestTemplate")
+    public RestTemplate cityRestTemplate() {
+        return new RestTemplateBuilder()
+                .setConnectTimeout(Duration.ofMillis(5000))
+                .build();
+    }
 }
