@@ -17,7 +17,7 @@ public class Trader {
 
     private String logo;
 
-    @JsonProperty
+    @JsonProperty("site_link")
     private String siteLink;
 
     private int cityId;
