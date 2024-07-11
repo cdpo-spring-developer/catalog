@@ -20,7 +20,7 @@ public class CityRestExecutor {
     }
 
     public List<City> restExecutor() {
-        URI uri = UriComponentsBuilder.fromUriString("http://localhost:8080/cat")
+        URI uri = UriComponentsBuilder.fromUriString("http://localhost:8089/cities")
                 .build()
                 .toUri();
         City city = restTemplate.getForObject(uri, City.class);
