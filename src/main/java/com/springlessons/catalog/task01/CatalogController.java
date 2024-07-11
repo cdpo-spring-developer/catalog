@@ -19,12 +19,11 @@ public class CatalogController {
         this.tradersService = tradersService;
     }
 
-    @GetMapping
-    public List<Trader> getCatalogByCity(@RequestHeader HttpHeaders header, String city) {
-        List<String> cityId = header.get(city);
-        List<Trader> traders = tradersService.getTraders();
-        traders.stream()
-                .filter(trader -> cityId.contains(header.get(city))).collect(Collectors.toSet());
+    @GetMapping("/traders")
+    public List<Trader> getTradersByCity(@RequestHeader("x-city-id") int cityId) {
+
+        List<Trader> traders = tradersService.getTraders(cityId);
+
         return traders;
     }
 }
