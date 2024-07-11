@@ -1,9 +1,6 @@
 package com.springlessons.catalog.rest.task01;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NonNull;
 
@@ -11,6 +8,7 @@ import lombok.NonNull;
 @Entity
 @Table(name = "city")
 public class City {
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
@@ -23,4 +21,16 @@ public class City {
     private double lat;
 
     private double lon;
+
+    public City() {
+
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
+    }
 }

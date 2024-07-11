@@ -1,19 +1,27 @@
 package com.springlessons.catalog.rest.task01;
 
 
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
+
+@Controller
 public class CityController {
 
-   private final ScheduledTasks scheduledTasks;
+   private final CityService cityService;
 
-    public CityController(ScheduledTasks scheduledTasks) {
-        this.scheduledTasks = scheduledTasks;
+    public CityController(CityService cityService) {
+        this.cityService = cityService;
     }
 
+    @GetMapping("/cities")
+    public String getCities(Model model) {
+        List<City> cities = cityService.getAllCities();
+        model.addAttribute("cities_list", cities);
+        return "city/cities";
+    }
     }
 
