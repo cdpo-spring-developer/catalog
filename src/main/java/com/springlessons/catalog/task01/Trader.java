@@ -1,6 +1,7 @@
 package com.springlessons.catalog.task01;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NonNull;
@@ -16,6 +17,7 @@ public class Trader {
 
     private String logo;
 
+    @JsonProperty
     private String siteLink;
 
     private int cityId;
