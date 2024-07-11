@@ -4,17 +4,16 @@ import com.springlessons.catalog.example.rest.model.City;
 import com.springlessons.catalog.example.rest.repository.CityRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Objects;
@@ -28,6 +27,7 @@ public class SchedulerCityService {
     @Value("${city.service.url}")
     private String cityServiceUrl;
 
+    @Qualifier("cityServiceRestTemplate")
     private final RestTemplate restTemplate;
     private final CityRepository cityRepository;
 
@@ -39,7 +39,6 @@ public class SchedulerCityService {
             log.debug("Update task complete successfully");
         } catch (RestClientException e) {
             log.error("Error getting cities from remote system", e);
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
     }
 
