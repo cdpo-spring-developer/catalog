@@ -2,7 +2,7 @@ package com.springlessons.catalog.Tasks.task1;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 
 import java.util.List;
 
@@ -10,14 +10,7 @@ import java.util.List;
 public interface TraderClient {
 
     @GetMapping("/traders")
-    List<Trader> getTraders(@RequestBody Trader trader);
+    List<Trader> getAllTraders();
+
 }
 
-class Trader {
-    private Integer id;
-    private String name;
-    private String description;
-    private String logo;
-    private String siteLink;
-    private Integer cityId;
-}
