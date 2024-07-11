@@ -21,9 +21,8 @@ public class ScheduledTasks {
 
     @Async("cities-executor")
     @Scheduled(fixedRate = 7, timeUnit = TimeUnit.DAYS)
-    public List<City> runBySchedule() {
+    public void runBySchedule() {
        List<City> cities = cityRestExecutor.restExecutor();
         cityRepository.saveAll(cities);
-        return cities;
     }
 }

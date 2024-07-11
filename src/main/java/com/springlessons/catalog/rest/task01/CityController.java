@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-
 public class CityController {
 
    private final ScheduledTasks scheduledTasks;
@@ -16,9 +15,5 @@ public class CityController {
         this.scheduledTasks = scheduledTasks;
     }
 
-    @GetMapping("/cities")
-    public List<City> getCities() {
-        List<City> cities = scheduledTasks.runBySchedule();
-        return cities;
     }
-}
+

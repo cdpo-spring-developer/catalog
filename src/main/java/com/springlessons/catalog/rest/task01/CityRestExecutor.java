@@ -20,13 +20,11 @@ public class CityRestExecutor {
     }
 
     public List<City> restExecutor() {
-        URI uri = UriComponentsBuilder.fromUriString("http://localhost:8089/cities")
-                .build()
-                .toUri();
-        City city = restTemplate.getForObject(uri, City.class);
+
+        City city = restTemplate.getForObject("http://localhost:8089/cities", City.class);
 
         ResponseEntity<List<City>> listResponseEntity = restTemplate.exchange(
-                uri,
+                "http://localhost:8089/cities",
                 HttpMethod.POST,
                 null,
                 new ParameterizedTypeReference<>() {
