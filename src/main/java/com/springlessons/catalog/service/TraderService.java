@@ -9,7 +9,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class ServiceTrader {
+public class TraderService {
 
     private final FeignCatalog feignCatalog;
 
