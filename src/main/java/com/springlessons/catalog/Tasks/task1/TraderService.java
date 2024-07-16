@@ -17,6 +17,6 @@ public class TraderService {
         List<Trader> allTraders = traderClient.getAllTraders();
         return allTraders.stream()
                 .filter(trader -> trader.getCityId().equals(cityId))
-                .collect(Collectors.toList());
+                .toList();
     }
 }
