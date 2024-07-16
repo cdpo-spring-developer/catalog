@@ -19,9 +19,9 @@ public class TraderController {
     private TraderService service;
 
     @GetMapping("/traders")
-    public String getTradersByCity(@RequestHeader HttpHeader header) {
+    public String getTradersByCity(@RequestHeader HttpHeaders headers) {
         {
-            Integer cityId = header.get("x-city-id");
+            Integer cityId = headers.getFirst("x-city-id");
 
             List<Trader> tradersByCity = service.getTradersByCity(cityId);
 

@@ -13,6 +13,7 @@ public class Trader {
     private int id;
     private String name;
     private String description;
+    private String logo_udl;
     private int city_id;
 
 
