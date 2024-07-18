@@ -1,5 +1,6 @@
-package com.springlessons.catalog.Tasks.task1;
+package com.springlessons.catalog.Tasks.task1.services;
 
+import com.springlessons.catalog.Tasks.task1.entity.Trader;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 

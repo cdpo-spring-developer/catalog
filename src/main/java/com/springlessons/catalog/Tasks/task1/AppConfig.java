@@ -1,4 +1,4 @@
-package com.springlessons.catalog.Tasks.Task2;
+package com.springlessons.catalog.Tasks.task1;
 
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;

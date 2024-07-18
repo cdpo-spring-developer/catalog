@@ -1,9 +1,9 @@
-package com.springlessons.catalog.Tasks.task1;
+package com.springlessons.catalog.Tasks.task1.services;
 
+import com.springlessons.catalog.Tasks.task1.entity.Trader;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class TraderService {

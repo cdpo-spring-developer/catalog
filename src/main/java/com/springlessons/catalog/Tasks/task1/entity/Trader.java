@@ -1,4 +1,4 @@
-package com.springlessons.catalog.Tasks.task1;
+package com.springlessons.catalog.Tasks.task1.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

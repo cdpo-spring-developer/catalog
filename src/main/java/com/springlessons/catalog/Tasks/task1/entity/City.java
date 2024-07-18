@@ -1,4 +1,4 @@
-package com.springlessons.catalog.Tasks.Task2;
+package com.springlessons.catalog.Tasks.task1.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

@@ -1,5 +1,7 @@
-package com.springlessons.catalog.Tasks.Task2;
+package com.springlessons.catalog.Tasks.task1.services;
 
+import com.springlessons.catalog.Tasks.task1.entity.City;
+import com.springlessons.catalog.Tasks.task1.repositories.CityRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
@@ -26,8 +28,7 @@ public class CityService {
                 url,
                 HttpMethod.GET,
                 null,
-                new ParameterizedTypeReference<List<City>>() {
-                }
+                new ParameterizedTypeReference<List<City>>() {}
         );
         List<City> cities = response.getBody();
 
@@ -37,6 +38,13 @@ public class CityService {
             }
         }
     }
+
+    public List<City> getAll(){
+        return cityRepository.findAll();
+    }
+
+
+
 }
 
 
